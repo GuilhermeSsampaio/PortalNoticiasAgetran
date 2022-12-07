@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal De Notícias Agetran</title>
+    <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- bootstrap - link cdn -->
+      <link rel='stylesheet' href='https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/a32c1a63/dist/dark/css/bootstrap.min.css'>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">  
+      <link href="carousel.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <!-- incluindo css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/agetran-logo.png" />
+  </head>
+  <body>
+    <!-- Barra Google Translate -->
+    <div id="barra-identidade">
+      <div id="barra-brasil">
+        <div id="wrapper-barra-brasil">
+          <div class="brasil-flag">
+            <a href="https://gov.br" class="link-barra">Brasil</a>
+          </div>
+            <span id="traduction">
+              <div id="google_translate_element" class="boxTradutor"></div>
+                <div class="translate-images">
+                  <a href="javascript:trocarIdioma('pt')"><img alt="portugues" src="images/upload_images/pt-br.png"></a>
+                  <a href="javascript:trocarIdioma('es')"><img alt="espanhol" src="images/upload_images/es.png"></a>
+                  <a href="javascript:trocarIdioma('en')"><img alt="ingles" src="images/upload_images/en.png"></a>
+                  <a href="javascript:trocarIdioma('it')"><img alt="italiano" src="images/upload_images/it.png"></a>
+                  <a href="javascript:trocarIdioma('fr')"><img alt="italiano" src="images/upload_images/fr.png"></a>
+                </div>
+            </span>
+        </div>
+      </div>
+    </div>
+    <!-- Fim Barra Google Translate -->
+
+    <!-- Cabeçalho -->
+    <header>
+      <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="images/agetran-logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+            <span class="navbar-toggler-icon navbar-dark"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Agetran</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <hr class="featurette-divider-navbar">
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="sobre" style="color: #FFF; font-size: 1.1rem; font-weight: 500;">Sobre</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #FFF; font-size: 1.1rem; font-weight: 500;">
+                    Serviços
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Passe Estudante <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">Rodoviária <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">Estacionamento <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#map" style="color: #FFF; font-size: 1.1rem; font-weight: 500;">Contato</a>
+                </li>
+              </ul>
+
+              <form class="d-flex mt-3 mt-lg-0" role="search">
+                <input class="form-control me-2 rounded" type="search" placeholder="Pesquisar" aria-label="Search" style="width:200px; height: 38px;">
+                <span class="btn-sm my-2 my-sm-8" style="font-size: 1rem;" type="submit"><i class="fas fa-search"></i></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Fim Cabeçalho -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">Passe Estudante</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="images/upload_images/passe.jpg" style="width:100%; max-width:400px">
+            <p style="padding: 20px 60px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close-sty" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">Rodoviária</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="images/upload_images/rodoviaria.jpg" style="width:100%; max-width:400px">
+            <p style="padding: 20px 60px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close-sty" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-white" id="exampleModalLabel">Estacionamento</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="mx-auto d-block" src="images/upload_images/estacionamento.jpg" style="width:100%; max-width:400px">
+            <p style="padding: 20px 60px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-close-sty" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim Modal -->
+
+    <!-- Carousel -->
+      <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-12 pb-5">
+                <section class="row">
+                    <div class="col-12 col-md-6 pb-0 pb-md-3 pt-2 pr-md-1">
+                        <div id="featured" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+                            <!--dots navigate-->
+                            <ol class="carousel-indicators top-indicator">
+                                <li type="button" data-bs-target="#featured" data-bs-slide-to="0" class="active"></li>
+                                <li type="button" data-bs-target="#featured" data-bs-slide-to="1"></li>
+                                <li type="button" data-bs-target="#featured" data-bs-slide-to="2"></li>
+                            </ol>
+                            
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
+                                        <div class="position-relative">
+                                            <div class="ratio_left-cover-1 image-wrapper">
+                                                <a href="#">
+                                                    <img class="img-fluid w-100 images-carousel" src="images/upload_images/semana_transito.jpg" alt="Image description">
+                                                </a>
+                                            </div>
+                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                                <a href="#" class="text-decoration-none">
+                                                    <h2 class="h3 post-title text-white my-1">Semana do Trânsito traz desafio de reduzir número de mortes em 50% até 2030</h2>
+                                                </a>
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a class="text-white font-weight-bold" href="#">Agetran</a></span>
+                                                    <span class="news-date">Sept 21, 2022</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
+                                        <div class="position-relative">
+                                            <div class="ratio_left-cover-1 image-wrapper">
+                                                <a href="#">
+                                                    <img class="img-fluid w-100 images-carousel" src="images/upload_images/onibus.jpg" alt="Image description">
+                                                </a>
+                                            </div>
+                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                                <a href="#" class="text-decoration-none">
+                                                    <h2 class="h3 post-title text-white my-1">Prefeitura atende recomendações e concede transporte gratuito nas eleições</h2>
+                                                </a>
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a class="text-white font-weight-bold" href="#">Agetran</a></span>
+                                                    <span class="news-date">Sept 30, 2022</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-item">
+                                    <div class="card border-0 rounded-0 text-light overflow zoom">
+                                        <div class="position-relative">
+                                            <div class="ratio_left-cover-1 image-wrapper">
+                                                <a href="#">
+                                                    <img class="img-fluid w-100 images-carousel" src="images/upload_images/multirao.jpg" alt="Image description">
+                                                </a>
+                                            </div>
+                                            <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                                <a href="#" class="text-decoration-none">
+                                                    <h2 class="h3 post-title text-white my-1">Mutirão de doação de sangue e ações educativas marcam mais um dia da Semana do Trânsito</h2>
+                                                </a>
+                                                <div class="news-meta">
+                                                    <span class="news-author">by <a class="text-white font-weight-bold" href="#">Agetran</a></span>
+                                                    <span class="news-date">Sept 22, 2022</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#featured" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#featured" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </button>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 pt-2 pl-md-1 mb-3 mb-lg-4">
+                        <div class="row">
+                            <div class="col-6 pb-1 pt-0 pr-1">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="#">
+                                                <img class="img-fluid images-lateral" src="images/upload_images/alanguedes.jpg" alt="Image description">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <a class="p-1 badge rounded-0 text-decoration-none" href="#" style="background-color: #0A50A0;">Prefeitura</a>
+
+                                            <a href="#" class="text-decoration-none">
+                                                <h2 class="h5 text-white my-1">Alan Guedes assina contrato do Fonplata</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6 pb-1 pl-1 pt-0">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="#">
+                                                <img class="img-fluid images-lateral" src="images/upload_images/drenagem.jpg" alt="Image description">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <a class="p-1 badge rounded-0 text-decoration-none" href="#" style="background-color: #0A50A0;">Sanesul</a>
+                                            <a href="#" class="text-decoration-none">
+                                                <h2 class="h5 text-white my-1">Obra de drenagem exige interdições próximo ao Córrego Paragem</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6 pb-1 pr-1 pt-1">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="#">
+                                                <img class="img-fluid images-lateral" src="images/upload_images/tre.jpg" alt="Image description">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <a class="p-1 badge rounded-0 text-decoration-none" href="#" style="background-color: #0A50A0;">Justiça</a>
+                                            <a href="#" class="text-decoration-none">
+                                                <h2 class="h5 text-white my-1">Regras da Lei Seca no dia das eleições em Dourados</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6 pb-1 pl-1 pt-1">
+                                <div class="card border-0 rounded-0 text-white overflow zoom">
+                                    <div class="position-relative">
+                                        <div class="ratio_right-cover-2 image-wrapper">
+                                            <a href="#">
+                                                <img class="img-fluid images-lateral" src="images/upload_images/viaduto.jpg" alt="Image description">
+                                            </a>
+                                        </div>
+                                        <div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+                                            <a class="p-1 badge rounded-0 text-decoration-none" href="#" style="background-color: #0A50A0;">Obras</a>
+                                            <a href="#" class="text-decoration-none">
+                                                <h2 class="h5 text-white my-1">Obras do viaduto do trevo do DOF foram tecnicamente liberadas</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+      </div>
+    <!-- Fim Carousel -->
+
+    <!-- Cards -->
+    <div class="section">
+        <div class="container">
+            <div class="row flex-row-stretch">
+              <% for (var i=0; i<noticias.length; i++) { %>
+                <div class="col-sm-6 col-md-4 col-lg-4 flex-col">
+                    <div class="card">
+                        <div class="card-label"><%= noticias[i].categoria %></div>
+                        <div class="card-photo" style="background-image: url(http://localhost:3000/images/upload_images/<%=noticias[i].imagem%>);"></div>
+                        <div class="card-body">
+                          <span class="noticia_autor"><%= noticias[i].autor %></span>
+                            <a class="h4 text-decoration-none" style="margin-bottom: 10px;" href="noticia_cliente?id_noticia=<%=noticias[i].id_noticia%>"><%=noticias[i].titulo%></a>
+
+                            <p><%= noticias[i].resumo %></p>
+                            <span class="noticia_data" style="margin-bottom: 20px;"><%= noticias[i].data_criacao %></span>
+                            <a class="btn btn-home" href="noticia_cliente?id_noticia=<%=noticias[i].id_noticia%>">Ver Mais <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Cards -->
+
+    <!-- Cards Horizontal -->
+    <div class="container marketing">
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Prefeitura atende recomendações e concede <span class="text-muted">transporte gratuito nas eleições.</span></h2>
+          <p class="lead" style="font-size: 1.1rem; margin-top: 20px">A Prefeitura de Dourados acatou recomendações feitas pelo STF (Supremo Tribunal Federal) e FNP (Frente Nacional de Prefeitos) para conceder gratuidade no transporte coletivo do município no próximo domingo (2), dia das eleições do primeiro turno. A medida tem validade das 6h às 18h e visa garantir, por todos os meios possíveis, que a soberania popular seja exercida sem dificuldades.</p>
+        </div>
+        <div class="col-md-5">
+          <img width="450" height="350" class="bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto" src="images/upload_images/onibus.jpg" alt="Imagem Ciclista">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1">Prefeitura atende recomendações e concede <span class="text-muted">transporte gratuito nas eleições.</span></h2>
+          <p class="lead" style="font-size: 1.1rem; margin-top: 20px">A Prefeitura de Dourados acatou recomendações feitas pelo STF (Supremo Tribunal Federal) e FNP (Frente Nacional de Prefeitos) para conceder gratuidade no transporte coletivo do município no próximo domingo (2), dia das eleições do primeiro turno. A medida tem validade das 6h às 18h e visa garantir, por todos os meios possíveis, que a soberania popular seja exercida sem dificuldades.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="images/upload_images/onibus.jpg" alt="Imagem Girassois" style="width: 450px; height: 350px;">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Prefeitura atende recomendações e concede <span class="text-muted">transporte gratuito nas eleições.</span></h2>
+          <p class="lead" style="font-size: 1.1rem; margin-top: 20px">A Prefeitura de Dourados acatou recomendações feitas pelo STF (Supremo Tribunal Federal) e FNP (Frente Nacional de Prefeitos) para conceder gratuidade no transporte coletivo do município no próximo domingo (2), dia das eleições do primeiro turno. A medida tem validade das 6h às 18h e visa garantir, por todos os meios possíveis, que a soberania popular seja exercida sem dificuldades.</p>
+        </div>
+        <div class="col-md-5">
+          <img width="450" height="350" class="bd-placeholder-img bd-placeholder-img-lg featurette-image mx-auto" src="images/upload_images/onibus.jpg" alt="Imagem Ciclista">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+    </div>
+    <!-- Fim Cards Horizontal -->
+
+    <!-- Google Maps -->
+      <div id="map" class=" d-flex justify-content-center">
+        <iframe width="900" height="300" frameborder="0" style="border:0; margin-bottom: 60px;" src="https://maps.google.com/maps?q=Rodovi%C3%A1ria%20de%20Dourados%2C%20Av.%20Marcelino%20P%C3%ADres%20-%20Vila%20Maxwell%2C%20Dourados%20&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near" title="Rodoviária de Dourados, Av. Marcelino Píres - Vila Maxwell, Dourados " aria-label="Rodoviária de Dourados, Av. Marcelino Píres - Vila Maxwell, Dourados"></iframe>
+      </div>
+    <!-- Fim Google Maps -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wrap">
+        <div class="container first_class">
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <h3>Fale Conosco</h3>
+              <p>Rua Coronel Ponciano, 1700 <br> (67) 3411-7626</p>
+              <a href="#email" class="contact">Ou entre em contato conosco enviando um e-mail <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <form class="newsletter">
+                <input id="email" type="text" placeholder="E-mail"> 
+                <a class="newsletter_submit_btn" href="#" target="_blank"><i class="fa fa-paper-plane"></i></a>
+              </form>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="col-md-12">
+                <div class="standard_social_links">
+                    <div>
+                      <li class="round-btn btn-facebook"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                      <li class="round-btn btn-linkedin"><a href="#" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                      <li class="round-btn btn-twitter"><a href="#" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                      <li class="round-btn btn-instagram"><a href="#" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                      <li class="round-btn btn-whatsapp"><a href="#" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                      <li class="round-btn btn-user"><a href="index"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </div>
+                  </div>   
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="container-fluid">
+            <div class="copyright">© 2022 Agetran. Todos os Direitos Reservados.</div>
+          </div>
+        </div>
+      </div>   
+    </footer>
+    <!-- Fim Footer -->
+
+    <a id="myBtn" class="back-top btn btn-light border position-fixed r-1 b-1 backtop-is-visible" style="padding: 8px 18px;" href="#" onclick="topFunction()">
+      <i class="fa fa-long-arrow-up" aria-hidden="true" style="font-size: 1.1rem;"></i>
+    </a>
+
+    <!-- Acessibilidade -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <!-- Fim Acessibilidade -->
+
+    <!-- Scripts -->
+      <!-- Script Bootstrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Script VLibras -->
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
+      <!-- Scripts de Funções -->
+      <script type="text/javascript">
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        function topFunction() {
+          document.documentElement.scrollTop = 0;
+        }
+
+        var comboGoogleTradutor = null; //Varialvel global
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'pt,en,es,it,fr',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            }, 'google_translate_element');
+
+            comboGoogleTradutor = document.getElementById("google_translate_element").querySelector(".goog-te-combo");
+        }
+
+        function changeEvent(el) {
+            if (el.fireEvent) {
+                el.fireEvent('onchange');
+            } else {
+                var evObj = document.createEvent("HTMLEvents");
+
+                evObj.initEvent("change", false, true);
+                el.dispatchEvent(evObj);
+            }
+        }
+
+        function trocarIdioma(sigla) {
+            if (comboGoogleTradutor) {
+                comboGoogleTradutor.value = sigla;
+                changeEvent(comboGoogleTradutor);//Dispara a troca
+            }
+        }
+      </script>
+
+      <!-- Script Google Translate -->
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>

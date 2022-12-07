@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portal De Notícias Agetran</title>
+    <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- bootstrap - link cdn -->
+      <link rel='stylesheet' href='https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/a32c1a63/dist/dark/css/bootstrap.min.css'>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">  
+      <link href="carousel.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="js/jquery-3.3.1.js"></script>
+
+    <!-- incluindo css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <style type="text/css">
+        body{
+            background: #eee !important;
+        }
+
+        .wrapper{
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .form-signin{
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox{
+            margin-bottom: 30px;
+        }
+
+        .form-signin .checkbox{
+            font-weight: normal;
+        }
+
+        .form-signin .form-control{
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .form-signin .form-control:focus{
+            z-index: 2;
+        }
+
+        .form-signin input[type=text]{
+            margin-bottom: 11px;
+        }
+          
+        .form-signin input[type=password]{
+            margin-bottom: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <form class="form-signin" action="/usuarioB/login" method="post">       
+          <h2 class="form-signin-heading text-center">Login ADM</h2>
+            <label class="form-label d-flex align-items-start" for="typeEmail">Email</label>
+              <input type="text" name="user_name" id="typeEmail" class="form-control form-control-lg" placeholder="Email Address" required/>
+
+            <label class="form-label d-flex align-items-start" for="typePassword">Password</label>
+              <input type="password" name="senha" id="typePassword" class="form-control form-control-lg" placeholder="Senha" required/>      
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login Adm" name="login">Login</button>   
+        </form>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

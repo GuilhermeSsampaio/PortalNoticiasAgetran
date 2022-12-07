@@ -1,0 +1,66 @@
+﻿drop database cadastro_usuarios;
+
+create database cadastro_usuarios;
+use cadastro_usuarios;
+create table usuarioA (id_usuario int not null primary key auto_increment, 
+	user_name varchar(7), 
+	senha varchar(7)
+);
+insert into usuarioA(user_name, senha) values ('flaviof','1234567');
+select * from usuarioA;
+
+create table usuarioB (id_usuario int not null primary key auto_increment, 
+	user_name varchar(7), 
+	senha varchar(7)
+);
+insert into usuarioB(user_name, senha) values ('flaviof','123');
+select * from usuarioB;
+
+create table noticias (id_noticia int not null primary key auto_increment,
+	categoria varchar(40),
+	titulo varchar(100), 
+	data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+	resumo varchar(300), 
+    noticia text,
+	autor varchar(30), 
+	data_noticia date, 
+	imagem varchar(30)
+);
+insert into noticias (categoria, titulo, resumo, noticia, autor, data_noticia, imagem) values 
+("Agetran", "Início das obras de drenagem exige interdições próximo ao Córrego Paragem", 
+"Agetran trabalha no cronograma das interrupções das vias mais movimentadas", 
+"A Prefeitura de Dourados, por meio da Agetran (Agência Municipal de Transporte e Trânsito), informa que com o início das obras de drenagem de águas pluviais e pavimentação asfáltica, que fazem parte do projeto da avenida Coronel Ponciano, alguns pontos já começam a ser interditados para a execução do trabalho e segurança da população. 
+“Neste primeiro momento, devido o início obra de drenagem de águas pluviais iniciamos uma interdição na região do Córrego Paragem e estamos trabalhando no cronograma das interrupções das vias, que serão necessários com o objetivo de minimizar eventuais contratempos para os moradores da região”, explica a diretora-presidente da Agetran, Mariana de Souza Neto. 
+A obra de drenagem tem o objetivo de melhorar o escoamento da água de chuva e minimizar a ocorrência de eventuais alagamentos, além de melhorar as condições de tráfego de pessoas e veículos, favorecimento à saúde, ao meio ambiente e a redução de custo de manutenção das vias. 
+Nos próximos dias, a interdição deve acontecer na Rua Josué Garcia Pires, antiga W-11, nas proximidades da Escola Municipal Neil Fioravanti (Caic), no Parque dos Coqueiros. A via é bastante utilizada pela população, pois corta o Córrego Paragem e facilita o acesso entre a região do Água Boa e Parque Nova Dourados, Terra Roxa e a avenida Coronel Ponciano.
+“Já realizamos reunião com a Engepar, que é a empresa responsável pelas obras e com as lideranças dos bairros adjacentes, onde informamos o cronograma de trabalho e nos próximos dias estaremos em contato direto com os moradores da Rua Josué Garcia Pires”, informa Mariana.", 
+"Pedro Mota", "29/10/22", "drenagem.jpg");
+
+insert into noticias (categoria, titulo, resumo, noticia, autor, data_noticia, imagem) values 
+("Justiça", "Conheça as regras da Lei Seca no dia das eleições em Dourados", 
+"Regras determinadas pelo TRE-MS valem entre 3h e 16h do próximo domingo", 
+"Neste domingo (2), mais de 169 mil douradenses estão aptos a irem às urnas nas eleições gerais do Brasil. A votação acontece em 80 locais, na cidade e nos distritos, para escolha, na ordem, de oito deputados federais, 24 deputados estaduais, um senador, governador e presidente da República. O horário de votação é das 7h às 16h. Caso o eleitor esteja na fila após esse período, o processo seguirá até que todos os que estejam esperando tenham votado.
+Em Dourados, a Lei Seca será seguida conforme determina o TRE-MS (Tribunal Regional Eleitoral de Mato Grosso do Sul), com proibição do consumo de bebidas alcoólicas no horário entre 3h e 16h do domingo, dia das eleições, em bares, restaurantes, conveniências, lanchonetes, trailers, hotéis, e demais estabelecimentos comerciais e similares, bem como em locais abertos ao público. 
+De acordo com nota do Tribunal, “a decisão visa garantir a ordem e tranquilidade no dia das eleições, assim como propiciar segurança dos eleitores e a normalidade da votação, visto que o consumo de bebida alcoólicas comumente acarreta transtornos e podem comprometer o bom andamento dos trabalhos eleitorais e o exercício do voto”.
+De acordo com a diretora-geral da GMD (Guarda Municipal de Dourados), Liliane Graziele Cespedes de Souza Nascimento, a pessoa que promover qualquer desordem prejudicando os trabalhos eleitorais estará cometendo crime. “O eleitor que se apresentar publicamente embriagado também pratica contravenção penal e responderá por isso”, explica.
+Durante o período eleitoral, todas as instituições de Segurança Pública, como a Policia Civil, Policia Federal, Policia Militar, Polícia Rodoviária Federal, Polícia Penal, assim como o Poder Judiciário e a Justiça Eleitoral estarão trabalhando na fiscalização e garantindo a tranquilidade e o bom andamento das Eleições. A Agetran (Agência Municipal de Transporte e Trânsito) e a Guarda Municipal de Dourados também vão atuar durante esses dias.
+Fake News
+O TSE disponibiliza uma página para que o eleitor tire suas dúvidas em relação ao sistema de votação e mentiras, ou fake news, recebidas pelas redes sociais e aplicativos de mensagens. Basta clicar aqui e ter informações confiáveis sobre as eleições.
+Para votar, o eleitor poderá fazer uso de uma “colinha” com os números dos candidatos escolhidos. A ordem de votação é deputado federal, deputado estadual, senador, governador e presidente. O uso do celular ou smartphone só é permitido para o uso do aplicativo E-titulo. Para votação, o aparelho deve ser deixado com o mesário até ser concluído o processo de votação. “O uso de qualquer equipamento que faça imagens dentro da cabine de votação é proibido para garantir a inviolabilidade do sigilo do voto. Isso não é novidade e está previsto na lei e nas resoluções do TSE faz muitos anos”, esclarece Israel Lins, analista judiciário da 18ª Zona Eleitoral de Dourados.", 
+"Pedro Mota", "29/10/22", "tre.jpg");
+
+insert into noticias (categoria, titulo, resumo, noticia, autor, data_noticia, imagem) values 
+("Obras", "Obras do viaduto do trevo do DOF foram tecnicamente liberadas", 
+"Agência Nacional de Transportes Terrestres vistoriou o local nesta sexta-feira (7)", 
+"Obras de construção do viaduto, no chamado Trevo do DOF, na BR-163 com a MS-153, tiveram vistoria realizada pela ANTT (Agência Nacional  Transportes Terrestres) nesta sexta-feira (7). A “Obra de Arte Especial” como é conceituada diante da complexidade e benefícios da sua execução, está chegando na fase final ou seja próximo a inauguração.
+Durante a vistoria do dispositivo em desnível, a diretora de execução da CCR Thais Borges, destacou que a obra contou com mais de 66 mil metros cúbicos de material escavado, equivalente a mais de 6.600 caminhões de solo movimentado, 750 metros cúbicos de concreto e 90 toneladas de aço.
+“Foram dez meses de execução da obra e a expectativa sempre foi muito positiva. Esperamos beneficiar mais de 225 mil habitantes, porque essa obra foi desenhada exatamente para esse cenário e queremos com isso salvaguardar cada vez mais a segurança e a mobilidade urbana. Por fim, quero destacar e exaltar o grande apoio que tivemos através da PRF (Polícia Rodoviária Federal), Agetran e da secretaria de obras da Prefeitura de Dourados, em especial do Prefeito Alan Guedes, que sempre esteve presente nas discussões e soluções, sem essa parceria seria impossível a realização da obra”, afirma Thais Borges.
+O diretor da  ANTT (Agência Nacional de Transportes Terrestres) Luciano Lourenço, falou da importância da obra no escoamento do  fluxo e a segurança que o dispositivo trouxe para os moradores de Dourados e para aqueles que utilizam a rodovia BR-163.
+“O projeto previamente foi aprovado pela agência e executado pela CCR com nosso acompanhamento, durante vistorias anteriores foram apontadas algumas pendências de origem técnicas, que hoje observamos que já foram cuidadosamente sanadas, com isso, o intuito é agora liberar definitivamente a obra”, concluiu Luciano Lourenço
+Representando o Prefeito Alan Guedes, o secretário municipal de Obras Públicas, Luis Gustavo Casarin, destacou a importância da obra para a cidade. “Era um gargalo muito grande esse cruzamento e uma  demanda solicitada pela população, que mora do outro lado da BR-163. Com a execução desta obra, daremos mais tranquilidade e segurança aos moradores. Esse sempre foi o desejo dessa nova gestão e um cuidado que o nosso prefeito Alan sempre tem com os munícipes”, completa Casarin.
+“Uma obra de grande importância, que garante a fluidez do trânsito e  a separação dos ciclistas e pedestres. Teremos mais segurança para os usuários das vias, lembrando que garante também a economia do tempo para os condutores e evita ocorrências indesejáveis”, ressaltou a diretora da Agetran (Agência Municipal de Transporte e Trânsito), Mariana Souza Neto.
+Ainda segundo dados da CCR, são mais de três mil quilômetros administrados pela empresa no Estado, e essa obra se fez necessária diante do fluxo muito grande de veículos naquele local, especificamente no cruzamento na BR-163, onde passam 24 mil veículos diários, já os veículos que cruzam é superior  a 53 mil.", 
+"Pedro Mota", "29/10/22", "viaduto.jpg");
+select * from noticias;
+
+delete from noticias where id_noticia=3

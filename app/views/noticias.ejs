@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Portal De Notícias Agetran</title>
+	    <!-- Font Awesome -->
+	      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	      <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+	    <!-- bootstrap - link cdn -->
+	      <link rel='stylesheet' href='https://cdn.rawgit.com/arafkarim/BootstrapPlusPlus/a32c1a63/dist/dark/css/bootstrap.min.css'>
+	      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	      <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+	    <!-- JQuery -->
+	    <script src="js/jquery-3.3.1.js"></script>
+
+	    <!-- incluindo css -->
+	    <link href="/css/style.css" rel="stylesheet">
+
+	    <!-- favicon -->
+	    <link rel="shortcut icon" href="images/agetran-logo.png" />
+	</head>
+	<body>
+		<!-- Cabeçalho -->
+	    <header>
+	      <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+	        <div class="container-fluid">
+	          <a class="navbar-brand" href="/"><img src="/images/agetran-logo.png" alt=""></a>
+	          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+	            <span class="navbar-toggler-icon navbar-dark"></span>
+	          </button>
+	          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+	            <div class="offcanvas-header">
+	              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Agetran</h5>
+	              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	            </div>
+	            <hr class="featurette-divider-navbar">
+	            <div class="offcanvas-body">
+	              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+	                <li class="nav-item">
+	                  <a class="nav-link btn" aria-current="page" href="/" style="color: #FFF; font-size: 1.1rem; font-weight: 500;">Home</a>
+	                </li>
+	              </ul>
+	            </div>
+	          </div>
+	        </div>
+	      </nav>
+	    </header>
+	    <!-- Fim Cabeçalho -->
+
+	    <div class="container">
+	    	<div class="row" style="margin-top: 30px;">
+	    		<form action="/busca" method="post">
+	    			<label class="text font-weight-bold"> Buscar notícias: </label>
+				      	<div class="main-search-input-wrap">
+				        	<div class="main-search-input fl-wrap">
+				          		<div class="main-search-input-item">
+				            		<input type="text"  name="pesquisa" placeholder="Pesquisar Notícias">
+				          		</div>
+				          		<button class="main-search-button">Search</button>
+				        	</div>
+				      	</div>
+			      	<label class="text text-muted font-weight-bold"> <%=noticias.length %> notícias localizadas </label>
+			    </form>
+	    	</div>
+	      		<% if (noticias.length > 0) { %>
+	    	<!-- Cards -->
+		    <div class="section">
+		        <div class="container">
+		            <div class="row flex-row-stretch">
+		            	<% for (var i=0; i<noticias.length; i++) { %>
+		                <div class="col-sm-6 col-md-4 col-lg-4 flex-col">
+		                    <div class="card">
+		                        <div class="card-label"><%=noticias[i].categoria%></div>
+		                        <div class="card-photo" style="background-image: url(http://localhost:3000/images/upload_images/<%=noticias[i].imagem%>);"></div>
+		                        <div class="card-body">
+		                          <span class="noticia_autor"><%= noticias[i].autor %></span>
+		                          	<div class="title-a" style="margin-bottom: 10px;">
+		                            	<a class="text text-muted" href="noticia?id_noticia=<%=noticias[i].id_noticia%>"><%=noticias[i].titulo%></a>
+		                        	</div>
+
+		                            <p><%= noticias[i].resumo %></p>
+		                            <span class="noticia_data" style="margin-bottom: 20px;"><%= noticias[i].data_criacao %></span>
+		                            <a class="btn btn-home" href="noticia?id_noticia=<%=noticias[i].id_noticia%>">Ver Mais <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+		                        </div>
+		                    </div>
+		                </div>
+		                <% } %>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- Fim Cards -->
+		  		<% } %>
+	    </div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
